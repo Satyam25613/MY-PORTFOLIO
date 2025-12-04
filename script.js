@@ -135,29 +135,38 @@ setTimeout(() => {
 }, 500);
 
 // Mobile Menu Logic
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const navLinks = document.getElementById('nav-links');
-const navbar = document.getElementById('navbar');
+// Dropdown Menu Logic
+const menuBtn = document.getElementById('menu-btn');
+const dropdownMenu = document.getElementById('dropdown-menu');
 
-if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('hidden');
-        navLinks.classList.toggle('flex');
+if (menuBtn && dropdownMenu) {
+    // Toggle menu
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('hidden');
+        // Small delay to allow display:flex to apply before opacity transition
+        setTimeout(() => {
+            dropdownMenu.classList.toggle('show');
+        }, 10);
     });
 
-    // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
+    // Close when clicking links
+    dropdownMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.add('hidden');
-            navLinks.classList.remove('flex');
+            dropdownMenu.classList.remove('show');
+            setTimeout(() => {
+                dropdownMenu.classList.add('hidden');
+            }, 200); // Wait for transition
         });
     });
 
-    // Close menu when clicking outside
+    // Close when clicking outside
     document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target) && !navLinks.classList.contains('hidden')) {
-            navLinks.classList.add('hidden');
-            navLinks.classList.remove('flex');
+        if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+            setTimeout(() => {
+                dropdownMenu.classList.add('hidden');
+            }, 200);
         }
     });
 }

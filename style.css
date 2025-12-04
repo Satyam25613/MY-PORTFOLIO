@@ -149,3 +149,44 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
 }
+
+/* Apple-Style Glassmorphism Navbar */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    max-width: fit-content;
+}
+
+[data-theme="dark"] .glass-nav {
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.nav-scroll {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.nav-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsive Rules */
+@media (max-width: 480px) {
+    .glass-nav {
+        width: 95%;
+        max-width: 95%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .nav-scroll {
+        max-width: 65%;
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    }
+}
