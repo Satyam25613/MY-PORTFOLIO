@@ -1,0 +1,151 @@
+:root {
+    /* Light Mode (Default) */
+    --bg: #FFFFFF;
+    --text: #000000;
+    --text-muted: #4B5563;
+    --accent: #1A73E8;
+    /* Ocean Blue */
+    --card-bg: #F3F4F6;
+    --card-border: #E5E7EB;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-border: rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --button-bg: #000000;
+    --button-text: #FFFFFF;
+    --button-hover: #333333;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode */
+    --bg: #050505;
+    --text: #FFFFFF;
+    --text-muted: #A8B0B9;
+    --accent: #1A73E8;
+    --card-bg: #1C1C1E;
+    --card-border: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(28, 28, 30, 0.9);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --button-bg: #FFFFFF;
+    --button-text: #000000;
+    --button-hover: #E5E7EB;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Sora', sans-serif;
+}
+
+/* Navigation Pill */
+.nav-pill {
+    background-color: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--button-bg);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--text);
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--card-bg);
+    transform: translateY(-1px);
+}
+
+/* Glassmorphism & Cards */
+.glass-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Text Selection */
+::selection {
+    background: var(--accent);
+    color: white;
+}
+
+/* Utilities */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--accent), #8B5CF6);
+}
+
+/* Lenis */
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
