@@ -77,17 +77,40 @@
                 </button>
 
                 <!-- Menu Toggle (3 Dots) -->
-                <button
-                    class="nav-menu p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex-shrink-0">
-                    <svg class="w-5 h-5 text-[var(--text)]" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-                    </svg>
-                </button>
+                <div class="relative">
+                    <button id="menu-btn"
+                        class="nav-menu p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex-shrink-0"
+                        aria-label="Toggle Menu">
+                        <svg class="w-5 h-5 text-[var(--text)]" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div id="dropdown-menu"
+                        class="hidden absolute right-0 top-12 w-48 glass-card py-2 shadow-xl border border-white/20 dark:border-white/10 transform origin-top-right transition-all duration-200 opacity-0 scale-95 z-50">
+                        <a href="#home"
+                            class="block px-4 py-2 text-sm text-[var(--text)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Home</a>
+                        <a href="#about"
+                            class="block px-4 py-2 text-sm text-[var(--text)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">About</a>
+                        <a href="#skills"
+                            class="block px-4 py-2 text-sm text-[var(--text)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Skills</a>
+                        <a href="#projects"
+                            class="block px-4 py-2 text-sm text-[var(--text)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Projects</a>
+                        <a href="#experience"
+                            class="block px-4 py-2 text-sm text-[var(--text)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Experience</a>
+                        <a href="#contact"
+                            class="block px-4 py-2 text-sm text-[var(--text)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Contact</a>
+                        <div class="h-px bg-[var(--card-border)] my-1"></div>
+                        <a href="https://drive.google.com/file/d/1I3s3RNRt7gL2_WkbjgEQ_X9CzO0G7N_j/view?usp=drive_link
+" target="_blank" class="block px-4 py-2 text-sm font-semibold text-[var(--accent)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors">Download
+                            CV</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6">
         <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -107,13 +130,18 @@
                         Hi, I'm <span class="text-[var(--accent)]">Satyam</span>
                     </h1>
                     <h2 class="text-xl md:text-2xl font-medium text-[var(--text-muted)]">
-                        AI Engineer • Cybersecurity Builder • QA Pro
+                        AI Engineer • Cybersecurity Specialist • QA Pro • Entrepreneurial Mindset
                     </h2>
                 </div>
 
                 <p class="text-lg text-[var(--text-muted)] max-w-xl leading-relaxed animate-fade-in-up">
-                    I design and build AI-driven tools for threat detection and defensive automation.
-                    My work bridges the gap between academic research and robust, deployable security solutions.
+                    I create practical AI-driven tools, design secure workflows, and improve
+                    software reliability. I
+                    enjoy working on projects that solve real problems—automating tasks, analyzing
+                    risks, and making
+                    systems safer and easier to use. I also think like an entrepreneur and enjoy
+                    turning simple ideas
+                    into useful solutions.
                 </p>
 
                 <div class="flex items-center gap-6 text-sm font-medium text-[var(--text-muted)] animate-fade-in-up">
@@ -140,8 +168,8 @@
                         class="btn-primary px-8 py-3 rounded-lg font-semibold text-center">
                         Hire Me
                     </a>
-                    <a href="resume.pdf" target="_blank"
-                        class="btn-outline px-8 py-3 rounded-lg font-semibold text-center">
+                    <a href="https://drive.google.com/file/d/1I3s3RNRt7gL2_WkbjgEQ_X9CzO0G7N_j/view?usp=drive_link"
+                        target="_blank" class="btn-outline px-8 py-3 rounded-lg font-semibold text-center">
                         Download CV
                     </a>
                 </div>
@@ -184,48 +212,111 @@
 
     <!-- 2. ABOUT ME -->
     <section id="about" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <!-- Left: Bio -->
-            <div class="lg:col-span-7 space-y-6 reveal-on-scroll">
-                <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-8">About Me</h2>
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Left Column: About Text -->
+            <div class="lg:col-span-7 space-y-8 reveal-on-scroll">
+                <h2 class="font-heading text-3xl font-bold text-[var(--text)]">About Me</h2>
                 <div class="prose prose-lg text-[var(--text-muted)]">
-                    <p class="font-medium text-[var(--text)]">
-                        I am a multidisciplinary technologist blending Agentic AI, cybersecurity research, and
-                        product-quality engineering.
+                    <p>
+                        My path hasn't been a straight line, but a collection of experiences driven
+                        by one thing: the
+                        desire to build things that actually work. In the tech world, I found my
+                        footing in AI,
+                        cybersecurity, and QA. I realized early on that writing code is only half
+                        the battle; the real
+                        challenge lies in making systems secure, reliable, and practical for the
+                        people who use them.
                     </p>
                     <p>
-                        I work at the intersection of AI and security: architecting agentic workflows to automate threat
-                        analysis, running penetration labs to validate system resilience, and building quality assurance
-                        practices that ship secure, reliable software.
+                        That practical mindset extends to my entrepreneurial ventures. I treat every
+                        project as a chance
+                        to solve a real problem, experimenting with new ideas and learning from what
+                        doesn't work. It’s
+                        about progress, not just perfection.
+                    </p>
+                    <p>
+                        When I step away from the screen, I turn to writing. Authoring a book about
+                        modern relationships
+                        taught me to look at the world through a different lens—one focused on
+                        empathy and human
+                        emotion. It balances my technical side and keeps my perspective grounded.
+                    </p>
+                    <p>
+                        Right now, I’m ready for the next chapter. I’m seeking new roles in AI,
+                        cybersecurity, or QA
+                        where I can apply this mix of technical discipline and creative thinking to
+                        build meaningful
+                        solutions.
                     </p>
                 </div>
             </div>
 
-            <!-- Right: Timeline -->
-            <div class="lg:col-span-5 space-y-6 reveal-on-scroll">
-                <div class="p-6 glass-card">
-                    <h3 class="text-[var(--text)] font-bold mb-4">Quick Timeline</h3>
+            <!-- Right Column: Quick Timeline -->
+            <div class="lg:col-span-5 reveal-on-scroll delay-100">
+                <div class="glass-card p-6 border border-[var(--card-border)]">
+                    <h3 class="font-bold text-[var(--text)] mb-6 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[var(--accent)]"></span>
+                        Quick Timeline
+                    </h3>
                     <ul class="space-y-6 border-l border-[var(--card-border)] ml-2 pl-6">
                         <li class="relative">
                             <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)]"></span>
-                            <p class="text-[var(--text)] text-sm font-bold">2025 - Present</p>
-                            <p class="text-[var(--text-muted)] text-sm">Founder, Cyber Shell</p>
+                            <p class="text-[var(--text)] text-sm font-bold">Oct 2025 – Present</p>
+                            <p class="text-[var(--text-muted)] text-sm font-semibold">QA Intern, C3A Labs</p>
+                            <p class="text-[var(--text-muted)] text-xs mt-1">Remote — New York, USA</p>
                         </li>
                         <li class="relative">
-                            <span
-                                class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--text-muted)]"></span>
-                            <p class="text-[var(--text)] text-sm font-bold">Jan 2025 - Jun 2025</p>
-                            <p class="text-[var(--text-muted)] text-sm">QA Intern, C3A Labs</p>
+                            <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                            <p class="text-[var(--text)] text-sm font-bold">Jul 2025 – Jan 2026</p>
+                            <p class="text-[var(--text-muted)] text-sm font-semibold">President, Student Development
+                                Cell (SDC)</p>
+                            <p class="text-[var(--text-muted)] text-xs mt-1">School of Computer Studies, SBUP — Pune,
+                                India</p>
                         </li>
                         <li class="relative">
-                            <span
-                                class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--text-muted)]"></span>
-                            <p class="text-[var(--text)] text-sm font-bold">2024 - Present</p>
-                            <p class="text-[var(--text-muted)] text-sm">Founder, Lunar Pixels</p>
+                            <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                            <p class="text-[var(--text)] text-sm font-bold">Apr 2025 – Jun 2025</p>
+                            <p class="text-[var(--text-muted)] text-sm font-semibold">Entrepreneur Intern, T-Hub</p>
+                            <p class="text-[var(--text-muted)] text-xs mt-1">Hyderabad, Telangana</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                            <p class="text-[var(--text)] text-sm font-bold">Jan 2025 – Present</p>
+                            <p class="text-[var(--text-muted)] text-sm font-semibold">Founder, Cyber Shell</p>
+                            <p class="text-[var(--text-muted)] text-xs mt-1">Pune, India</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                            <p class="text-[var(--text)] text-sm font-bold">Nov 2024 – Present</p>
+                            <p class="text-[var(--text-muted)] text-sm font-semibold">Freelance Creative Designer —
+                                Lunar Pixels</p>
+                            <p class="text-[var(--text-muted)] text-xs mt-1">Pune, India</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[var(--accent)]"></span>
+                            <p class="text-[var(--text)] text-sm font-bold">May 2024 – Jul 2024</p>
+                            <p class="text-[var(--text-muted)] text-sm font-semibold">Customer Executive, Conneqt (Quess
+                                Corp)</p>
+                            <p class="text-[var(--text-muted)] text-xs mt-1">Pune / Pimpri-Chinchwad</p>
                         </li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+    <!-- Future Vision -->
+    <section class="py-24 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal-on-scroll">
+            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-8">Future Vision</h2>
+            <p class="text-lg text-[var(--text-muted)] leading-relaxed">
+                I aim to grow as an AI engineer by working on intelligent automation systems, exploring meaningful
+                product ideas, and building technology that solves real problems. I'm especially interested in
+                simplifying complex workflows using AI, improving product reliability through smarter testing, and
+                continuing to blend creativity with engineering. Alongside this, I'm also studying Japanese and hope to
+                experience Japan’s culture firsthand in the future.
+            </p>
         </div>
     </section>
 
@@ -243,17 +334,23 @@
             <!-- Right: Content -->
             <div class="lg:col-span-8 space-y-8 reveal-on-scroll">
                 <div>
-                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-[var(--text)]">The Love She Never Knew
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-[var(--text)]">The
+                        Love She Never Knew
                     </h2>
-                    <p class="text-[var(--text-muted)] text-xl mt-2 font-medium">— By Satyam Singh Rajput</p>
+                    <p class="text-[var(--text-muted)] text-xl mt-2 font-medium">— By Satyam Singh
+                        Rajput</p>
                 </div>
 
                 <div class="prose prose-lg text-[var(--text-muted)] leading-relaxed">
                     <p>
-                        The Love She Never Knew is an emotional slow-burn story about two souls who never expected to
-                        change each other’s lives—yet did. Niharika hides her storms behind a quiet smile, while Satyam
-                        carries his feelings like an unfinished sentence. When their lives intersect through simple,
-                        ordinary moments, an extraordinary bond begins to grow between them—soft, unspoken, and
+                        The Love She Never Knew is an emotional slow-burn story about two souls who
+                        never expected to
+                        change each other’s lives—yet did. Niharika hides her storms behind a quiet
+                        smile, while Satyam
+                        carries his feelings like an unfinished sentence. When their lives intersect
+                        through simple,
+                        ordinary moments, an extraordinary bond begins to grow between them—soft,
+                        unspoken, and
                         impossibly pure.
                     </p>
                     <p class="font-medium text-[var(--text)] pt-2">
@@ -278,8 +375,10 @@
                         </li>
                     </ul>
                     <p class="italic pt-2">
-                        This book is for anyone who has loved deeply but quietly, who has waited, hoped, or held on even
-                        when the world wasn’t listening. A heartfelt, relatable, and soul-touching read that stays with
+                        This book is for anyone who has loved deeply but quietly, who has waited,
+                        hoped, or held on even
+                        when the world wasn’t listening. A heartfelt, relatable, and soul-touching
+                        read that stays with
                         you long after the last page.
                     </p>
                 </div>
@@ -295,7 +394,8 @@
                         class="btn-outline px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[var(--card-bg)]">Pothi
                         Store (Hard Copy)</a>
                     <a href="https://sites.google.com/view/srbooks/home?authuser=0" target="_blank"
-                        class="btn-outline px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[var(--card-bg)]">SR BOOK
+                        class="btn-outline px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[var(--card-bg)]">SR
+                        BOOK
                         STORE</a>
                 </div>
             </div>
@@ -305,149 +405,270 @@
     <!-- 3. PROJECTS -->
     <section id="projects" class="py-24 bg-[var(--card-bg)]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-12 reveal-on-scroll">Featured Work</h2>
+            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-12 reveal-on-scroll">
+                Featured Work
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <!-- Cyber Shell -->
-                <a href="cyber-shell.html"
+                <div
                     class="glass-card p-8 block hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll group">
                     <span
                         class="text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2 block">Startup</span>
                     <h3
                         class="text-2xl font-bold text-[var(--text)] mb-3 group-hover:text-[var(--accent)] transition-colors">
-                        Cyber Shell</h3>
-                    <p class="text-[var(--text-muted)] mb-6">AI-powered cybersecurity platform automating threat
-                        detection and response.</p>
-                    <span
-                        class="text-sm font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">View
-                        Project →</span>
-                </a>
+                        Cyber Shell
+                    </h3>
+                    <p class="text-[var(--text-muted)] mb-6">
+                        AI-powered cybersecurity platform that automates threat detection, analysis, and response
+                        workflows. Built to simplify security operations and make defensive processes more efficient and
+                        reliable.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="cyber-shell.html"
+                            class="text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors">
+                            View Project →
+                        </a>
+                        <a href="https://cyber-shell-doqzdowqbvcob1zy.builder-preview.com/" target="_blank"
+                            class="text-sm font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors">
+                            Live Demo →
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Lunar Pixels -->
                 <a href="lunar-pixels.html"
                     class="glass-card p-8 block hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll group">
                     <span
-                        class="text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2 block">Agency</span>
+                        class="text-xs font-bold uppercase tracking-wider text-[var(--accent)] mb-2 block">Freelance</span>
                     <h3
                         class="text-2xl font-bold text-[var(--text)] mb-3 group-hover:text-[var(--accent)] transition-colors">
-                        Lunar Pixels</h3>
-                    <p class="text-[var(--text-muted)] mb-6">Digital innovation studio crafting premium web experiences
-                        for brands.</p>
+                        Lunar Pixels
+                    </h3>
+                    <p class="text-[var(--text-muted)] mb-6">
+                        Lunar Pixels is my personal freelance space where I work on design, small websites, video
+                        editing, and digital content projects for individuals and small businesses.
+                    </p>
                     <span
-                        class="text-sm font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">View
-                        Project →</span>
+                        class="text-sm font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
+                        View Project →
+                    </span>
                 </a>
             </div>
 
-            <h3 class="font-heading text-xl font-bold text-[var(--text)] mb-8 reveal-on-scroll">Technical Projects</h3>
+            <h3 class="font-heading text-xl font-bold text-[var(--text)] mb-8 reveal-on-scroll">
+                Technical Projects
+            </h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <a href="projects/pen-testing-lab.html"
                     class="glass-card p-6 block hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 reveal-on-scroll group">
                     <h4 class="font-bold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors">
-                        Pen-Testing Lab</h4>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">Virtual lab environment for ethical hacking
-                        simulations.</p>
+                        Pen-Testing Lab
+                    </h4>
+                    <p class="text-sm text-[var(--text-muted)] mb-4">
+                        Virtual lab environment for ethical hacking simulations.
+                    </p>
                     <span
-                        class="text-xs font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">View
-                        Details →</span>
+                        class="text-xs font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
+                        View Details →
+                    </span>
                 </a>
                 <a href="https://zenodo.org/records/10686955" target="_blank"
                     class="glass-card p-6 block hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 reveal-on-scroll group">
                     <h4 class="font-bold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors">
-                        Phishing Research</h4>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">Academic research on AI-driven phishing attacks.
+                        Phishing Research
+                    </h4>
+                    <p class="text-sm text-[var(--text-muted)] mb-4">
+                        Academic research on AI-driven phishing attacks.
                     </p>
                     <span
-                        class="text-xs font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">Read
-                        Paper →</span>
+                        class="text-xs font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
+                        Read Paper →
+                    </span>
                 </a>
                 <a href="https://satyyy001.github.io/Password_Strength_Checker/" target="_blank"
                     class="glass-card p-6 block hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300 reveal-on-scroll group">
                     <h4 class="font-bold text-[var(--text)] mb-2 group-hover:text-[var(--accent)] transition-colors">
-                        Password Analyzer</h4>
-                    <p class="text-sm text-[var(--text-muted)] mb-4">Real-time password strength estimation tool.</p>
+                        Password Analyzer
+                    </h4>
+                    <p class="text-sm text-[var(--text-muted)] mb-4">
+                        Real-time password strength estimation tool.
+                    </p>
                     <span
-                        class="text-xs font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">Live
-                        Demo →</span>
+                        class="text-xs font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
+                        Live Demo →
+                    </span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 4. SKILLS -->
+    <!-- Restructured Skills Section -->
     <section id="skills" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-12 reveal-on-scroll">Technical Skills</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Cybersecurity -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <h3 class="font-bold text-[var(--text)] mb-4 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-red-500"></span> Cybersecurity
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Burp
-                            Suite</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Metasploit</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Wireshark</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Nmap</span>
+            <!-- Core Skills Block -->
+            <div class="mb-24">
+                <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-12 reveal-on-scroll">
+                    Core Skills
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Cybersecurity -->
+                    <div
+                        class="glass-card p-6 reveal-on-scroll hover:-translate-y-2 hover:shadow-2xl hover:border-[var(--accent)] transition-all duration-300 group">
+                        <h3
+                            class="font-bold text-[var(--text)] mb-4 flex items-center gap-2 group-hover:text-[var(--accent)] transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-red-500 group-hover:animate-pulse"></span>
+                            Cybersecurity
+                        </h3>
+                        <ul
+                            class="space-y-2 text-[var(--text-muted)] list-disc pl-5 text-sm group-hover:text-[var(--text)] transition-colors">
+                            <li>Burp Suite</li>
+                            <li>Nmap</li>
+                            <li>Wireshark</li>
+                            <li>Metasploit</li>
+                            <li>Basic threat analysis</li>
+                        </ul>
+                    </div>
+
+                    <!-- QA Engineering -->
+                    <div
+                        class="glass-card p-6 reveal-on-scroll hover:-translate-y-2 hover:shadow-2xl hover:border-[var(--accent)] transition-all duration-300 group">
+                        <h3
+                            class="font-bold text-[var(--text)] mb-4 flex items-center gap-2 group-hover:text-[var(--accent)] transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-green-500 group-hover:animate-pulse"></span> QA
+                            Engineering
+                        </h3>
+                        <ul
+                            class="space-y-2 text-[var(--text-muted)] list-disc pl-5 text-sm group-hover:text-[var(--text)] transition-colors">
+                            <li>Manual testing</li>
+                            <li>Automation basics</li>
+                            <li>API testing</li>
+                            <li>Test case writing</li>
+                            <li>Bug reporting</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Research -->
+                    <div
+                        class="glass-card p-6 reveal-on-scroll hover:-translate-y-2 hover:shadow-2xl hover:border-[var(--accent)] transition-all duration-300 group">
+                        <h3
+                            class="font-bold text-[var(--text)] mb-4 flex items-center gap-2 group-hover:text-[var(--accent)] transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 group-hover:animate-pulse"></span> AI &
+                            Research
+                        </h3>
+                        <ul
+                            class="space-y-2 text-[var(--text-muted)] list-disc pl-5 text-sm group-hover:text-[var(--text)] transition-colors">
+                            <li>LLMs</li>
+                            <li>RAG</li>
+                            <li>AI workflow automation</li>
+                            <li>Prompt engineering</li>
+                            <li>Model experimentation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Design & Creative -->
+                    <div
+                        class="glass-card p-6 reveal-on-scroll hover:-translate-y-2 hover:shadow-2xl hover:border-[var(--accent)] transition-all duration-300 group">
+                        <h3
+                            class="font-bold text-[var(--text)] mb-4 flex items-center gap-2 group-hover:text-[var(--accent)] transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-purple-500 group-hover:animate-pulse"></span> Design &
+                            Creative
+                        </h3>
+                        <ul
+                            class="space-y-2 text-[var(--text-muted)] list-disc pl-5 text-sm group-hover:text-[var(--text)] transition-colors">
+                            <li>UI/UX fundamentals</li>
+                            <li>Web UI design</li>
+                            <li>Video editing</li>
+                            <li>Photo editing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Programming & Databases -->
+                    <div
+                        class="glass-card p-6 reveal-on-scroll hover:-translate-y-2 hover:shadow-2xl hover:border-[var(--accent)] transition-all duration-300 group">
+                        <h3
+                            class="font-bold text-[var(--text)] mb-4 flex items-center gap-2 group-hover:text-[var(--accent)] transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-yellow-500 group-hover:animate-pulse"></span>
+                            Programming & Databases
+                        </h3>
+                        <ul
+                            class="space-y-2 text-[var(--text-muted)] list-disc pl-5 text-sm group-hover:text-[var(--text)] transition-colors">
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML & CSS</li>
+                            <li>SQL</li>
+                            <li>NoSQL</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
 
-                <!-- QA Engineering -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <h3 class="font-bold text-[var(--text)] mb-4 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-green-500"></span> QA Engineering
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
+            <!-- Tools Block (Visually Distinct) -->
+            <div class="reveal-on-scroll border-t border-[var(--card-border)] pt-12">
+                <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-8 flex items-center gap-3">
+                    <svg class="w-8 h-8 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    Tools
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div
+                        class="glass-card p-4 flex flex-col items-center text-center hover:bg-[var(--card-bg-hover)] transition-colors group">
+                        <span class="font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">VS
+                            Code / Antigravity</span>
+                    </div>
+                    <div
+                        class="glass-card p-4 flex flex-col items-center text-center hover:bg-[var(--card-bg-hover)] transition-colors group">
                         <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Selenium</span>
+                            class="font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">Git
+                            & GitHub</span>
+                    </div>
+                    <div
+                        class="glass-card p-4 flex flex-col items-center text-center hover:bg-[var(--card-bg-hover)] transition-colors group">
                         <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">JIRA</span>
+                            class="font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">Figma
+                            / Ps / Canva</span>
+                    </div>
+                    <div
+                        class="glass-card p-4 flex flex-col items-center text-center hover:bg-[var(--card-bg-hover)] transition-colors group">
                         <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">API
-                            Testing</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Postman</span>
+                            class="font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">Filmora
+                            / Premiere / DaVinci</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- AI & Research -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <h3 class="font-bold text-[var(--text)] mb-4 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-blue-500"></span> AI & Research
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">LLMs</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Python</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">TensorFlow</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">RAG</span>
-                    </div>
-                </div>
+        </div>
+    </section>
 
-                <!-- Design -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <h3 class="font-bold text-[var(--text)] mb-4 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-purple-500"></span> Design
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Figma</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">UI/UX</span>
-                        <span
-                            class="px-3 py-1 text-xs font-medium rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-muted)]">Web
-                            Design</span>
-                    </div>
-                </div>
+    <!-- Learning Section -->
+    <section class="py-24 relative bg-[var(--card-bg)]">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Learning -->
+            <div class="reveal-on-scroll">
+                <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-8">What I'm Learning Now</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]"><span
+                            class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>Strengthening AI-driven
+                        automation workflows</li>
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]"><span
+                            class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>Exploring advanced testing
+                        strategies</li>
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]"><span
+                            class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>Expanding knowledge in defensive
+                        cybersecurity</li>
+                    <li class="flex items-center gap-3 text-[var(--text-muted)]"><span
+                            class="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>Learning Japanese and
+                        understanding Japanese culture</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -455,63 +676,108 @@
     <!-- 5. EXPERIENCE -->
     <section id="experience" class="py-24 bg-[var(--card-bg)]">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-12 reveal-on-scroll">Experience</h2>
+            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-12 reveal-on-scroll">
+                Experience
+            </h2>
 
             <div class="space-y-8">
-                <!-- C3A Labs -->
+                <!-- QA Intern — C3A Labs -->
                 <div class="glass-card p-8 reveal-on-scroll hover:border-[var(--accent)] transition-colors">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                         <div>
                             <h3 class="text-xl font-bold text-[var(--text)]">QA Intern</h3>
-                            <a href="https://c3alabs.com" target="_blank"
-                                class="text-[var(--accent)] font-medium hover:underline">C3A Labs</a>
+                            <p class="text-[var(--accent)] font-medium">C3A Labs</p>
                         </div>
                         <span
-                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">Jan
-                            2025 - Jun 2025</span>
+                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">Oct
+                            2025 – Present • Remote (New York, USA)</span>
                     </div>
+                    <p class="text-[var(--text-muted)] mb-4">
+                        C3A Labs is an AI automation agency focused on building workflow-driven AI
+                        products.
+                        <br><span class="font-medium text-[var(--text)]">My work includes:</span>
+                    </p>
                     <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
-                        <li>Conducted manual and automated testing for web applications.</li>
-                        <li>Collaborated with developers to identify and resolve critical bugs.</li>
-                        <li>Documented test cases and improved QA processes.</li>
+                        <li>Testing and validating AI-driven automation workflows</li>
+                        <li>Supporting model evaluation and quality improvements</li>
+                        <li>Collaborating with engineers to refine automated processes</li>
                     </ul>
                 </div>
 
-                <!-- Cyber Shell -->
+                <!-- President — SDC -->
                 <div class="glass-card p-8 reveal-on-scroll hover:border-[var(--accent)] transition-colors">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                         <div>
-                            <h3 class="text-xl font-bold text-[var(--text)]">Founder & CEO</h3>
-                            <a href="cyber-shell.html" class="text-[var(--accent)] font-medium hover:underline">Cyber
-                                Shell</a>
+                            <h3 class="text-xl font-bold text-[var(--text)]">President</h3>
+                            <p class="text-[var(--accent)] font-medium">Student Development Cell
+                                (SDC)</p>
                         </div>
                         <span
-                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">2025
-                            - Present</span>
+                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">Jul
+                            2025 – Present • School of Computer Studies, SBUP</span>
                     </div>
+                    <p class="text-[var(--text-muted)] mb-4">
+                        As President of SDC, I help organize student-focused initiatives that blend
+                        academics with
+                        practical exposure.
+                        <br><span class="font-medium text-[var(--text)]">My role includes:</span>
+                    </p>
                     <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
-                        <li>Leading the development of AI-driven cybersecurity tools.</li>
-                        <li>Architecting agentic workflows for threat detection.</li>
-                        <li>Managing product roadmap and business strategy.</li>
+                        <li>Planning and managing workshops, seminars, and technical events</li>
+                        <li>Coordinating student teams and college-level committees</li>
+                        <li>Strengthening communication between faculty, industry guests, and
+                            students</li>
                     </ul>
                 </div>
 
-                <!-- Lunar Pixels -->
+                <!-- Entrepreneur Intern — T-Hub -->
                 <div class="glass-card p-8 reveal-on-scroll hover:border-[var(--accent)] transition-colors">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                         <div>
-                            <h3 class="text-xl font-bold text-[var(--text)]">Founder</h3>
-                            <a href="lunar-pixels.html" class="text-[var(--accent)] font-medium hover:underline">Lunar
-                                Pixels</a>
+                            <h3 class="text-xl font-bold text-[var(--text)]">Entrepreneur Intern
+                            </h3>
+                            <p class="text-[var(--accent)] font-medium">T-Hub</p>
                         </div>
                         <span
-                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">2024
-                            - Present</span>
+                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">Apr
+                            2025 – Jun 2025 • Hyderabad</span>
                     </div>
+                    <p class="text-[var(--text-muted)] mb-4">
+                        T-Hub is India’s leading startup incubator. Here, I worked on shaping Cyber
+                        Shell,
+                        my
+                        early-stage AI security project.
+                        <br><span class="font-medium text-[var(--text)]">I focused on:</span>
+                    </p>
                     <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
-                        <li>Founded a digital agency focused on premium web experiences.</li>
-                        <li>Delivered custom websites and brand identities for clients.</li>
-                        <li>Oversaw design, development, and client relations.</li>
+                        <li>Validating the project idea with mentors</li>
+                        <li>Understanding customer pain points</li>
+                        <li>Improving the core concept for real-world use</li>
+                        <li>Learning about product development and early-stage strategy</li>
+                    </ul>
+                </div>
+
+                <!-- Customer Executive — Conneqt -->
+                <div class="glass-card p-8 reveal-on-scroll hover:border-[var(--accent)] transition-colors">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--text)]">Customer Executive</h3>
+                            <p class="text-[var(--accent)] font-medium">Conneqt Business Solutions
+                            </p>
+                        </div>
+                        <span
+                            class="text-sm text-[var(--text-muted)] bg-[var(--bg)] px-3 py-1 rounded-full border border-[var(--card-border)] mt-2 md:mt-0">May
+                            2024 – Jun 2024 • Pune</span>
+                    </div>
+                    <p class="text-[var(--text-muted)] mb-4">
+                        Conneqt is a customer operations company under Quess Corp.
+                        <br><span class="font-medium text-[var(--text)]">My responsibilities
+                            included:</span>
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-[var(--text-muted)]">
+                        <li>Handling customer queries and resolving issues</li>
+                        <li>Managing high-volume tasks efficiently</li>
+                        <li>Supporting service operations with clear communication</li>
                     </ul>
                 </div>
             </div>
@@ -521,9 +787,12 @@
     <!-- 6. CONTACT -->
     <section id="contact" class="py-24">
         <div class="max-w-3xl mx-auto px-6 text-center reveal-on-scroll">
-            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-6">Let's Work Together</h2>
+            <h2 class="font-heading text-3xl font-bold text-[var(--text)] mb-6">Let's Work Together
+            </h2>
             <p class="text-[var(--text-muted)] mb-8">
-                Whether you have a project in mind or just want to say hi, I'm always open to discussing new ideas.
+                Whether you have a project in mind or just want to say hi, I'm always open to
+                discussing new
+                ideas.
             </p>
             <a href="mailto:satyam25613@gmail.com" class="btn-primary px-8 py-3 rounded-lg font-semibold inline-block">
                 Get in Touch

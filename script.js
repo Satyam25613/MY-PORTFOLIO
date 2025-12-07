@@ -136,6 +136,7 @@ setTimeout(() => {
 
 // Mobile Menu Logic
 // Dropdown Menu Logic
+// Dropdown Menu Logic
 const menuBtn = document.getElementById('menu-btn');
 const dropdownMenu = document.getElementById('dropdown-menu');
 
@@ -143,30 +144,45 @@ if (menuBtn && dropdownMenu) {
     // Toggle menu
     menuBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        dropdownMenu.classList.toggle('hidden');
-        // Small delay to allow display:flex to apply before opacity transition
-        setTimeout(() => {
-            dropdownMenu.classList.toggle('show');
-        }, 10);
+        const isHidden = dropdownMenu.classList.contains('hidden');
+
+        if (isHidden) {
+            dropdownMenu.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                dropdownMenu.classList.remove('opacity-0', 'scale-95');
+                dropdownMenu.classList.add('opacity-100', 'scale-100');
+            }, 10);
+        } else {
+            dropdownMenu.classList.remove('opacity-100', 'scale-100');
+            dropdownMenu.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                dropdownMenu.classList.add('hidden');
+            }, 200); // Wait for transition
+        }
     });
 
     // Close when clicking links
     dropdownMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            dropdownMenu.classList.remove('show');
+            dropdownMenu.classList.remove('opacity-100', 'scale-100');
+            dropdownMenu.classList.add('opacity-0', 'scale-95');
             setTimeout(() => {
                 dropdownMenu.classList.add('hidden');
-            }, 200); // Wait for transition
+            }, 200);
         });
     });
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
         if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.classList.remove('show');
-            setTimeout(() => {
-                dropdownMenu.classList.add('hidden');
-            }, 200);
+            if (!dropdownMenu.classList.contains('hidden')) {
+                dropdownMenu.classList.remove('opacity-100', 'scale-100');
+                dropdownMenu.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    dropdownMenu.classList.add('hidden');
+                }, 200);
+            }
         }
     });
 }
